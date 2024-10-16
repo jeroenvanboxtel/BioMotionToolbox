@@ -1,0 +1,15 @@
+Updates to BiomotionToolbox
+
+21-nov-2013
+Biomotion.m
+Added functionality: allow reading of Manera files.
+These files are very similar to vanrie files, but do not have the added spaces etc. Position information is in floats and not in integers.
+ - added a try-catch statement in the 'otherwise' case in the switch statement in Create (the catch exemption catches the Manera files)
+ - made changes to loadvanrie() to automatically differentiate between vanrie and Manera files, and to correctly read manera files.
+
+6-jun-2014
+Added functionality: add reading of .csm files, used by Character Studio.
+- no check for dropped points yet. Just checked with 1 input file, no extensive checking done, other than Anchor, SelectJoints, and SelectFrames options.
+
+30-nov-2015
+Added functionality: add reading of files from the Piwek et al (2015) database. By default this filetype is not recognised correctly, however. So it is important to define the filetype as 'pollick' when calling BioMotion. So e.g. bm = BioMotion('F06.txt','FileType','pollick');
